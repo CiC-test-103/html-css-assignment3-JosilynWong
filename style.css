@@ -48,6 +48,179 @@ h1, h2, h3, h4, h5, h6 {
 
 /** Your CSS Below **/
 
+/*
+  Base font settings and background color
+*/
+html {
+  background-color: var(--clr-stone100);
+  font-family: var(--fs-base);
+  font-size: var(--font-paragraph);
+  color: var(--clr-stone600);
+}
+
+/*
+  Main document background color and padding 
+*/
+main {
+  background-color: white;
+  padding: 40px;
+}
+
+/*
+  General section styling
+*/
+section {
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+/*
+  Styling for the Preparation section
+*/
+section.preparation {
+  background-color: var(--clr-rose50);
+  border-radius: 15px;
+  padding: 25px; /* extra inset for this section */
+}
+
+/*
+  General header styling
+*/
+h1, h2, h3 {
+  margin-bottom: 10px;
+}
+
+/*
+  Font settings for h1 and h2
+*/
+h1, h2 {
+  font-family: var(--fs-accent);
+  font-weight: var(--fw-regular);
+}
+
+/*
+  Specific stylings for h1, h2, and h3
+*/
+h1 {
+  font-size: 2.5em;
+  color: var(--clr-stone900);
+}
+
+h2 {
+  font-size: var(--font-sub-header);
+  color: var(--clr-brown800);
+}
+
+h3 {
+  font-size: 1.25em;
+  font-weight: var(--fw-bold);
+  color: var(--clr-rose800);
+}
+
+/*
+  Horizontal rule styling
+*/
+hr {
+  width: 100%;
+  margin-top: 15px; /* margin from element above */
+  margin-bottom: 25px; /* margin from element below */
+  border: 1px, solid, var(--clr-stone150);
+}
+
+/*
+  List padding
+*/
+ul, ol {
+  padding-left: 24px;
+}
+
+/*
+  List item padding
+*/
+li {
+  padding-left: 20px;
+}
+
+/*
+  Change list item marker color
+*/
+li::marker {
+  color: var(--clr-rose800);
+}
+
+/*
+  Table styling
+*/
+table {
+  margin-top: 15px;
+  width: 100%;
+  border-collapse: collapse; /* facilitate bottom border for table row */
+}
+
+/*
+  Bottom border for a table row
+*/
+tr {
+  border-bottom: 1px solid var(--clr-stone150);
+}
+
+/*
+  Table data padding
+*/
+td {
+  padding: 25px;
+}
+
+/*
+  Change font color and weight for table data of class value
+*/
+td.value {
+  color: var(--clr-brown800);
+  font-weight: var(--fw-bold);
+}
+
+/*
+  For mobile device
+*/
+@media only screen and (max-width: 768px) {
+  /*
+    Make image section fill the width of screen and 
+    fix to the top of screen
+  */
+  section img {
+    min-width: calc(100% + 80px); /* extend width to including the parent paddings*/
+    margin-top: -40px; /* override the parent padding */
+    margin-left: -40px; /* override the parent padding */
+  }
+}
+
+/*
+  For desktop device
+*/
+@media only screen and (min-width: 768px) {
+  /*
+    Main document should have a margin around it, use only 
+    65% of screen and have rounded corners
+  */
+  main {
+    max-width: 65%; 
+    margin-top: 100px;
+    margin-bottom: 100px;
+    margin-left: auto; 
+    margin-right: auto; 
+    border-radius: 30px; 
+  }
+  
+  /*
+    Image section should have rounded corners and obey
+    parent paddings.
+  */
+  section img {
+    border-radius: 15px; 
+    margin: 0px;
+  }  
+}
+
 /** Attribution CSS **/
 .attribution { font-size: 11px; text-align: center; }
 .attribution a { color: hsl(228, 45%, 44%); }
