@@ -59,28 +59,36 @@ html {
 }
 
 /*
-  Main document background color and padding 
+  Flex column styling 
 */
-main {
+.column {
+  display: flex;
+  flex-direction: column;
   background-color: white;
-  padding: 40px;
 }
 
 /*
-  General section styling
+  Default flex row styling
 */
-section {
-  width: 100%;
-  margin-bottom: 30px;
+.default-row {
+  width: auto;
+  margin: 20px 40px;
 }
 
 /*
-  Styling for the Preparation section
+  Preparation row styling
 */
-section.preparation {
+.preparation-row {
   background-color: var(--clr-rose50);
   border-radius: 15px;
   padding: 25px; /* extra inset for this section */
+}
+
+/*
+  Image row styling
+*/
+.image-row {
+  width: 100%;
 }
 
 /*
@@ -121,9 +129,6 @@ h3 {
   Horizontal rule styling
 */
 hr {
-  width: 100%;
-  margin-top: 15px; /* margin from element above */
-  margin-bottom: 25px; /* margin from element below */
   border: 1px solid var(--clr-stone150);
 }
 
@@ -180,46 +185,61 @@ td.value {
 }
 
 /*
-  For mobile device
-*/
-@media only screen and (max-width: 768px) {
-  /*
-    Make image section fill the width of screen and 
-    fix to the top of screen
-  */
-  section img {
-    min-width: calc(100% + 80px); /* extend width to including the parent paddings*/
-    margin-top: -40px; /* override the parent padding */
-    margin-left: -40px; /* override the parent padding */
-  }
-}
-
-/*
-  For desktop device
+  For larger screen device
 */
 @media only screen and (min-width: 768px) {
   /*
-    Main document should have a margin around it, use only 
-    65% of screen and have rounded corners
+    Flex column should have a margin around it, use only 
+    65% of screen width and have rounded corners
   */
-  main {
-    max-width: 65%; 
-    margin-top: 100px;
-    margin-bottom: 100px;
-    margin-left: auto; 
-    margin-right: auto; 
+  .column {
+    max-width: 60%; 
+    margin: 100px auto;
     border-radius: 30px; 
   }
   
   /*
-    Image section should have rounded corners and obey
-    parent paddings.
+    Image row should have paddings for its content.
   */
-  section img {
-    min-width: 100%;
-    border-radius: 15px; 
-    margin: 0px;
+  .image-row {
+    width: auto;
+    padding: 40px 40px 0px 40px;
   }  
+
+  /*
+    Image should have rounded corners
+  */
+  img {
+    border-radius: 15px;
+  }
+}
+
+/*
+  As the screen gets wider, the flex column should 
+  take up less space
+*/
+@media only screen and (min-width: 992px) {
+  .column {
+    max-width: 55%;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .column {
+    max-width: 50%;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .column {
+    max-width: 45%;
+  }
+}
+
+@media only screen and (min-width: 2630px) {
+  .column {
+    max-width:30%;
+  }
 }
 
 /** Attribution CSS **/
