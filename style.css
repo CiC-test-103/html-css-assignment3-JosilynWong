@@ -124,7 +124,7 @@ hr {
   width: 100%;
   margin-top: 15px; /* margin from element above */
   margin-bottom: 25px; /* margin from element below */
-  border: 1px, solid, var(--clr-stone150);
+  border: 1px solid var(--clr-stone150);
 }
 
 /*
@@ -216,6 +216,7 @@ td.value {
     parent paddings.
   */
   section img {
+    min-width: 100%;
     border-radius: 15px; 
     margin: 0px;
   }  
